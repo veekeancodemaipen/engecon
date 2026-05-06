@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #faf7f2;
+  --ink: #1a1612;
+  --clay: #b8492e;
+  --sage: #5a6e5a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-feature-settings: "ss01", "ss02";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-display {
+  font-optical-sizing: auto;
+}
+
+/* Tabular numbers for everything financial */
+.tabular,
+table,
+input[type="number"] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle paper texture on main */
+.paper-texture {
+  background-color: #faf7f2;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(184, 73, 46, 0.025) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(90, 110, 90, 0.025) 0%, transparent 50%);
+}
+
+/* Prose tweaks */
+.lead {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.55;
+  font-style: italic;
+  color: #3d3527;
+  letter-spacing: -0.005em;
+}
+
+/* Math expressions inline */
+.math {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: 1.05em;
+  letter-spacing: 0.005em;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #f4efe4; }
+::-webkit-scrollbar-thumb { background: #d9d1c0; }
+::-webkit-scrollbar-thumb:hover { background: #8c7e63; }
+
+/* Clean range slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: #d9d1c0;
+  outline: none;
+  border-radius: 0;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #b8492e;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #faf7f2;
+  box-shadow: 0 0 0 1px #b8492e;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: #b8492e;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #faf7f2;
+  box-shadow: 0 0 0 1px #b8492e;
+}
+
+/* Number input — strip spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Fade-in for module switching */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle border style for the editorial feel */
+.rule-thin {
+  border-top: 1px solid #d9d1c0;
+}
+.rule-double {
+  border-top: 3px double #b8ac95;
+}
